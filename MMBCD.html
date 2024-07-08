@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="MMBCD: Multimodal Breast Cancer Detection from Mammograms with Clinical History">
+  <meta name="keywords" content="Mammography, Clinical History, Diagnostic, ViT, DiNO">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MMBCD: Multimodal Breast Cancer Detection from Mammograms with Clinical History</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 is-family-sans-serif is-size-2 publication-title">MMBCD: Multimodal Breast Cancer Detection from Mammograms with Clinical History</h1>
+          <h2 class="title is-2 is-family-sans-serif is-size-3 has-text-link has-text-centered">MICCAI 24</h2>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://www.linkedin.com/in/kshitiz-jain-7a5b4a129/">Kshitiz Jain</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="https://www.linkedin.com/in/adsbansal/">Aditya Bansal</a><sup>2</sup>,</span>
+            <span class="author-block">
+              <a href="https://scholar.google.com/citations?user=6A3dai4AAAAJ&hl=en">Krithika Rangarajan</a><sup>3</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://www.cse.iitd.ac.in/~chetan/">Chetan Arora</a><sup>1</sup>,
+          </div>
+
+          <div class="is-size-6 publication-authors">
+            <span class="author-block"><sup>1</sup>Indian Institute of Technology Delhi,</span>
+            <span class="author-block"><sup>2</sup>Thapar Institute of Technology,</span>
+            <span class="author-block"><sup>3</sup>All India Institute Of Medical Sciences Delhi</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="https://arxiv.org/pdf/2011.12948"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/2011.12948"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://github.com/google/nerfies"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <div class="row" id="header_img" align="middle">
+        <image src="static/images/mmbcd.jpg" class="img-responsive" alt="overview" width="1000px">
+      </div>
+      <p class="has-text-centered">
+        <span class="dnerf">Model Diagram</span> Our framework utilizes a cross-attention layer to attend to top K ROI embeddings by the textual representation of the clinical history. Our findings reveal the synergistic impact of textual, visual, and cross-attention embeddings on the accuracy of breast cancer detection.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="margin-top: -3.5rem">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-family-primary is-3">Abstract</h2>
+        <div class="content is-family-primary has-text-justified">
+          <p>
+            Mammography serves as a vital tool for breast cancer detection, with screening and diagnostic modalities catering to distinct patient populations. 
+            However, in resource-constrained settings, screening mammography may not be feasible, necessitating reliance on diagnostic approaches. 
+            Recent advances in deep learning have shown promise in automated malignancy prediction, yet existing methodologies often overlook crucial clinical context inherent in diagnostic mammography.
+            In this study, we propose a novel approach to integrate mammograms and clinical history to enhance breast cancer detection accuracy. 
+            To achieve our objective, we leverage recent advances in foundational models, where we use ViT for mammograms, and RoBERTa for encoding text based clinical history. 
+            Since, current implementations of ViT can not handle large 4K × 4K mammography scans, we device a novel framework to first detect region-of-interests, 
+            and then classify using multi-instance-learning strategy, while allowing text embedding from clinical history to attend to the visual regions of interest from the mammograms. 
+          </p>
+          <p>
+            Extensive experimentation demonstrates that our model, MMBCD, successfully incorporates contextual information while preserving image resolution and context, 
+            leading to superior results over existing methods, and showcasing its potential to significantly improve breast cancer screening practices. 
+            We report an <b>(Accuracy, F1)</b> of <b>(0.96,0.82)</b>, and <b>(0.95,0.68)</b> on our two in-house test datasets by MMBCD, against <b>(0.91,0.41)</b>, and <b>(0.87,0.39)</b> by LLaVA, and <b>(0.84,0.50)</b>, and <b>(0.91,0.27)</b> by CLIP-ViT; both state-of-the-art multi-modal foundational models.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+  </div>
+</section>
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@article{mmbcd,
+  author    = {Jain, Kshitiz and Bansal, Aditya and Rangarajan, Krithika and Arora, Chetan},
+  title     = {MMBCD: Multimodal Breast Cancer Detection from Mammograms with Clinical History},
+  journal   = {MICCAI},
+  year      = {2024},
+}</code></pre>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This template has been borrowed from <a href="https://github.com/nerfies/nerfies.github.io">source code</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

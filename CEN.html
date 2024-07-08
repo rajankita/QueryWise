@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Follow the Radiologist: Clinically Relevant Multi-View Cues for Breast Cancer Detection from Mammograms">
+  <meta name="keywords" content="Mammography, Detection, Multi-View, ViT, DiNO">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Follow the Radiologist: Clinically Relevant Multi-View Cues for Breast Cancer Detection from Mammograms</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 is-family-sans-serif is-size-2 publication-title">Follow the Radiologist: Clinically Relevant Multi-View Cues for Breast Cancer Detection from Mammograms</h1>
+          <h2 class="title is-2 is-family-sans-serif is-size-3 has-text-link has-text-centered">MICCAI 24</h2>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://www.linkedin.com/in/kshitiz-jain-7a5b4a129/">Kshitiz Jain</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="https://scholar.google.com/citations?user=6A3dai4AAAAJ&hl=en">Krithika Rangarajan</a><sup>3</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://www.cse.iitd.ac.in/~chetan/">Chetan Arora</a><sup>1</sup>,
+          </div>
+
+          <div class="is-size-6 publication-authors">
+            <span class="author-block"><sup>1</sup>Indian Institute of Technology Delhi,</span>
+            <span class="author-block"><sup>3</sup>All India Institute Of Medical Sciences Delhi</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="https://arxiv.org/pdf/2011.12948"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/2011.12948"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://github.com/google/nerfies"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <div class="row" id="header_img" align="middle">
+        <image src="static/images/CEN.jpg" class="img-responsive" alt="overview" width="800px">
+      </div>
+      <p class="has-text-centered">
+        <span class="dnerf">Model Diagram</span> Mammogram images from two views are processed by an object detection model to generate initial proposals. A refining network then enhances these proposals by predicting contextual correlations between views.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="margin-top: -3.5rem">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-family-primary is-3">Abstract</h2>
+        <div class="content is-family-primary has-text-justified">
+          <p>
+            Automated breast cancer detection using deep learning based object detection models have achieved high sensitivity, but often struggles with high false positive rate. While radiologists possess the ability to analyze and identify malignant masses in mammograms using multiple views, it poses a challenge for deep learning based models. 
+            Inspired by how object appearance behaves across multiple views in natural images, researchers have proposed several techniques to exploit geometric correspondence between location of a tumor in multiple views and reduce false positives. We question the clinical relevance of such cues. 
+            We show that there is inherent ambiguity in geometric correspondence between the two mammography views, because of which accurate geometric alignment is not possible. Instead, we propose to match morphological cues between the two views. 
+            Harnessing recent advances for object detection approaches in computer vision, we adapt a state-of-the-art transformer architecture to use proposed morphological cues. We claim that proposed cues are more agreeable with a clinician's approach compared to the geometrical alignment.
+          </p>
+          <p>
+            Using our approach, we show a significant improvement of <b>5%</b> in sensitivity at <b>0.3 False Positives per Image (FPI)</b> on benchmark INBreast dataset. We also report an improvement of <b>2%</b> and <b>1%</b> on in-house and benchmark DDSM dataset respectively. Realizing lack of open source code base in this area impeding reproducible research, we promise to make our source code and pretrained models available publicly.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+  </div>
+</section>
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@article{followtheradiologist,
+  author    = {Jain, Kshitiz and Rangarajan, Krithika and Arora, Chetan},
+  title     = {Follow the Radiologist: Clinically Relevant Multi-View Cues for Breast Cancer Detection from Mammograms},
+  journal   = {MICCAI},
+  year      = {2024},
+}</code></pre>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This template has been borrowed from <a href="https://github.com/nerfies/nerfies.github.io">source code</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
