@@ -1,0 +1,33 @@
+VICTIM:
+  ARCH: 'radformer'
+  DATASET: 'gbusg'
+  DATA_ROOT: 'data/GBCU-Shared'
+  PATH: 'victim_models/radformer/radformer.pkl'
+  WIDTH: 224
+  HEIGHT: 224
+THIEF:
+  ARCH: 'resnet50'
+  DATA_ROOT: 'data/GBUSV-Shared'
+  DATASET: 'GBUSV'
+  SUBSET: 128116
+  HARD_LABELS: True
+ACTIVE:
+  BUDGET: 5000
+  METHOD: 'random'
+  CYCLES: 1
+  USE_PRETRAINED: True
+  PRETRAINED_PATH : 'ckpts/resnet50-imagenet1k.pth'
+  ALPHA: 0.2  # only used when hard_labels is False
+  TEMP: 1.0   # only used when hard_labels is False
+RNG_SEED: 1
+TRIALS: 1
+METHOD_NAME: ''
+OUT_DIR: 'results'
+TRAIN:
+  BATCH: 16
+  MOMENTUM: 0.9
+  EPOCH: 100
+  OPTIMIZER: "SGD"
+  LR: 0.005 
+  MILESTONES: [20,40,60,80]
+  WDECAY: 0.0005

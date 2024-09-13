@@ -1,0 +1,81 @@
+victim_dataset: 'gbusg'
+victim_arch: 'radformer'
+victim_model_path: '/home/ankita/scratch/data_msa_medical/victim_models/radformer/radformer.pkl'
+victim_data_root: '/home/ankita/scratch/data_msa_medical/GBCU-Shared'
+num_classes: 3
+img_size: 224
+
+dataset: 'GBUSV'
+subset: 128116
+net: 'vit_b_16'
+net_from_name: False
+thief_root: '/home/ankita/scratch/data_msa_medical/GBUSV-Shared'
+
+use_pretrain: True
+pretrained_dir: '/home/ankita/scratch/data_msa_medical/ckpts/vit_b_16-imagenet1k.pth'
+load_labeled_set: True
+
+warmstart: False
+warmstart_dir: '/home/ankita/scratch/data_msa_medical/results_ankita/gbusg_radformer/GBUSV_vit/SGD/5000_val500/random_/trial_1_cycle_1_best.pth'
+labeled_set_path: '/home/ankita/scratch/data_msa_medical/results_ankita/gbusg_radformer/GBUSV_vit/SGD/5000_val500/random_/X_trial_1_cycle_1_labeled_set.npy'
+val_set_path: '/home/ankita/scratch/data_msa_medical/results_ankita/gbusg_radformer/GBUSV_vit/SGD/5000_val500/random_/X_trial_1_cycle_1_val_set.npy'
+save_dir: 'saved_models/radformer'
+
+save_name: 'querywise_5k_vit_trial_1_u3_la_false'
+
+scheduler_type: 'cosine'
+epoch: 100  
+warmup_epoch: 10
+
+la: False
+tro: 1
+kd_alpha: 0.4  #0.4
+kd_temp: 1.5
+kd_alpha_ulb: 0.5  #0.5
+kd_temp_ulb: 1.5
+ulb_loss_ratio: 1.0  #10.0
+ema_m: 0.999  #0.999
+
+lr: 0.02 #0.0005  # for coldstart
+weight_decay: 0.0005 #0.00005
+
+algorithm: querywise
+no_progress: True
+expand_labels: True
+eval_step: 234
+local_rank: -1
+num_labels: 5000
+warmup: 0
+crop_ratio: 0.875
+
+
+resume: False
+# load_path: ./saved_models/caltech_5k_kcenter_fixmatch_la/latest_model.pth
+overwrite: True
+use_tensorboard: True
+num_train_iter: 900000
+num_eval_iter: 234
+num_log_iter: 234
+batch_size: 16 #32
+eval_batch_size: 16
+num_warmup_iter: 5120
+uratio: 3  #7
+hard_label: True
+p_cutoff: 0.95
+optim: SGD
+momentum: 0.9
+layer_decay: 0.5
+amp: False
+clip: 0.0
+
+train_sampler: RandomSampler
+num_workers: 4
+seed: 5
+ds_seed: 123
+world_size: 1
+rank: 0
+multiprocessing_distributed: False
+dist_url: tcp://127.0.0.1:10006
+dist_backend: nccl
+gpu: None
+use_wandb: True

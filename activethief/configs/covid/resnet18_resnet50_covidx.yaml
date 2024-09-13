@@ -1,0 +1,34 @@
+VICTIM:
+  ARCH: 'resnet18'
+  DATASET: 'pocus'
+  DATA_ROOT: 'data/covid_5_fold'
+  PATH: 'victim_models/pocus_resnet18.pth.tar'
+  WIDTH: 224
+  HEIGHT: 224
+THIEF:
+  ARCH: 'resnet50'
+  DATA_ROOT: 'data/covidx_us/images_cropped'
+  DATASET: 'covidx'
+  SUBSET: 128116
+  HARD_LABELS: True
+ACTIVE:
+  BUDGET: 5000
+  METHOD: 'random'
+  CYCLES: 1
+  USE_PRETRAINED: True
+  PRETRAINED_PATH : 'ckpts/resnet50-imagenet1k.pth'
+  ALPHA: 0.2  # only used when hard_labels is False
+  TEMP: 1.0   # only used when hard_labels is False
+  LA: False
+RNG_SEED: 1
+TRIALS: 1
+METHOD_NAME: ''
+OUT_DIR: 'results'
+TRAIN:
+  BATCH: 128
+  MOMENTUM: 0.9
+  EPOCH: 100
+  OPTIMIZER: "SGD"
+  LR: 0.01  #0.01
+  MILESTONES: [20,40,60,80]
+  WDECAY: 0.0005
